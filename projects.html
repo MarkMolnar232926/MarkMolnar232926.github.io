@@ -3,54 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects | Márk Molnár</title>
+    <title>My Projects - Márk Molnár</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background: #0073e6;
+            background: #2a2a2a;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         nav a {
-            color: white;
+            color: #e0e0e0;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #c9a227;
+        }
+        .portfolio-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #c9a227;
+            margin: 0;
+        }
+        .projects-content {
+            padding: 80px 40px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .projects-content h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #f5f5f5;
         }
         .project-card {
-            background: white;
+            background: #2a2a2a;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            transform: scale(1);
-            transition: transform 0.3s ease-in-out;
-            margin: 10px;
-            display: inline-block;
+            margin-top: 20px;
         }
-        .project-card:hover {
-            transform: scale(1.05);
+        .project-card h2 {
+            font-size: 24px;
+            color: #c9a227;
+        }
+        .project-card p {
+            font-size: 18px;
+            color: #cccccc;
         }
         footer {
-            background: #222;
+            background: #2a2a2a;
             color: white;
             padding: 20px;
+            margin-top: 20px;
             text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Projects</h1>
+        <div class="portfolio-title">Márk Molnár</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
@@ -58,20 +82,22 @@
         </nav>
     </header>
 
-    <section class="section">
+    <section class="projects-content">
+        <h1>My Projects</h1>
+
         <div class="project-card">
-            <h3>Root Image Analysis using Computer Vision</h3>
-            <p>Developed a pipeline for plant root recognition using U-Net, achieving an F1 score of 0.85 on the validation set.</p>
-            <p><em>Client: Netherlands Plant Eco-Phenotyping Centre</em></p>
+            <h2>House Price Prediction</h2>
+            <p>Machine learning model for real estate pricing using various algorithms and feature engineering techniques.</p>
         </div>
+
         <div class="project-card">
-            <h3>Outdoor Fire Alarm System using Computer Vision</h3>
-            <p>Developed a CNN for fire detection and implemented Explainable AI methods (Grad-CAM, Lime) for enhanced transparency.</p>
-            <p><em>Project: EmberSense Solutions</em></p>
+            <h2>Custom Word Embeddings</h2>
+            <p>Developed an NLP model to learn semantic meanings of words using techniques like Word2Vec and GloVe.</p>
         </div>
+
         <div class="project-card">
-            <h3>Vending Machine AI</h3>
-            <p>Dynamic pricing model for smart vending machines.</p>
+            <h2>Vending Machine AI</h2>
+            <p>AI-driven dynamic pricing system for smart vending machines to optimize pricing strategies.</p>
         </div>
     </section>
 
