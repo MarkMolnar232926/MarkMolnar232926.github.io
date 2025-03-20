@@ -13,6 +13,8 @@
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
         header {
             background: #2a2a2a;
@@ -31,6 +33,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #c9a227;
@@ -42,15 +45,16 @@
             margin: 0;
         }
         .projects-content {
-            padding: 80px 40px;
+            padding: 80px 20px;
             text-align: left;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .projects-content h1 {
             font-size: 36px;
             font-weight: bold;
             color: #f5f5f5;
+            margin-bottom: 40px;
         }
         .project-card {
             background: #2a2a2a;
@@ -58,21 +62,86 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 193, 7, 0.3);
+        }
+        .project-info {
+            flex: 1; /* Ensures text takes up remaining space */
         }
         .project-card h2 {
             font-size: 24px;
             color: #c9a227;
+            margin: 0;
         }
         .project-card p {
             font-size: 18px;
             color: #cccccc;
+            margin: 5px 0;
         }
+        .project-card a {
+            color: #f5a623;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+        .project-card a:hover {
+            color: #c9a227;
+        }
+
+        /* Client logo */
+        .client-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px; /* Adjust width as needed */
+            margin-left: 20px;
+        }
+        .client-logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .client-logo img {
+            width: 60px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .client-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hidden Content for Accordion */
+        .project-details {
+            display: none;
+            margin-top: 20px;
+            background-color: #333333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
         footer {
-            background: #2a2a2a;
+            background: #181818;
             color: white;
             padding: 20px;
-            margin-top: 20px;
             text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -80,7 +149,7 @@
     <header>
         <div class="portfolio-title">Márk Molnár</div>
         <nav>
-            <a href="index.html">Home</a> <!-- Link to the home page -->
+            <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
             <a href="projects.html">My Projects</a>
             <a href="contact.html">Contact Me</a>
@@ -91,23 +160,120 @@
         <h1>My Projects</h1>
 
         <div class="project-card">
-            <h2>House Price Prediction</h2>
-            <p>Machine learning model for real estate pricing using various algorithms and feature engineering techniques.</p>
+            <div class="project-info">
+                <h2>AI-Driven Plant Analysis</h2>
+                <p>Identifying and segmenting root structures using Computer Vision</p>
+                <p>Client: The Netherlands Eco-phenotyping Centre (NPEC)</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/npec_logo.png" alt="NPEC Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p>The Netherlands Plant Eco-phenotyping Centre (NPEC) is dedicated to advancing plant research for sustainable agriculture. One of the key challenges in this field is automating root segmentation from images to achieve accurate root detection and analysis. Additionally, robotics plays a crucial role in precise plant inoculation. This project addresses these challenges by developing a robust plant segmentation approach, accurate root tip detection, and precise inoculation using a prototype of the OT-2 robot.</p>
+                <p>To tackle the challenges of plant phenotyping, computer vision methods were used to separate Petri dishes from background interference and perform semantic segmentation on plant elements like seeds, shoots, and roots. After refining and preprocessing the dataset, I created a machine learning model that could accurately predict masks for various plant structures. This enabled instance segmentation, which identified individual plants within the images, allowing for precise measurements such as root length and the exact location of root tips—a crucial factor in evaluating plant growth and characteristics.</p>
+                <p>In parallel with the computer vision work, the robotics aspect of the project focused on automating the delivery of inoculants to the identified plant root tips. I simulated and developed a precision liquid handling robot that was programmed using a PID controller for accurate liquid dispensing. The robot was integrated with the computer vision pipeline, enabling it to locate and deliveer the liquid to targeted areas on the Petri dish. This demonstarted how vision-based analysis could be seamlessly combined with robotic automation, allowing for precise interventions in plant phenotyping experiments.</p>
+                <p>Beside the PID controller, I also developed a Reinforcement Learning model. By designing appropriate reward functions and conducting hyperparameter tuning, I ensured that the robot could autonomously navigate to the correct root tips for liquid delivery. By comparing the PID controller and the Reinforcement Learning-based control system, I conducted a comparative analysis between these 2 systems. The PID controller demonstarted superior accuracy when combined with the Computer Vision pipeline, achieving precision below 1mm. However, with Reinforcement Learning, the robot performed the task way faster, but with a little bit worse accuracy.</p>
+                <p>Project Highlights:</p>
+                <ul>
+                    <li>Implemented a U-Net model achieving an F1 score of 0.85 for root mask prediction.</li>
+                    <li>Applied Dijkstra's shortest path method to accurately measure primary root length.</li>
+                    <li>Developed and compared a Reinforcement Learning model and a PID controller for precise inoculation using a simulated OT-2 robot. While RL was faster, the PID controller achieved higher accuracy in targeting root tips.</li>
+                </ul>
+                <p>Key Takeaways:</p>
+                <ul>
+                    <li>Strengthened expertise in Computer Vision for agriculture applications.</li>
+                    <li>Gained fundamental knowledge of robotics, automation, and precision control.</li>
+                    <li>Designed and developed an end-to-end AI-driven solution, from concept to working prototype.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="project-card">
-            <h2>Custom Word Embeddings</h2>
-            <p>Developed an NLP model to learn semantic meanings of words using techniques like Word2Vec and GloVe.</p>
+            <div class="project-info">
+                <h2>Chatbot Experience Optimization</h2>
+                <p>Research on chatbot personalization, accuracy, and perceived waiting times in SMEs</p>
+                <p>Client: Digiwerkplaats</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/digiweerkplats_mkb_logo.png" alt="Digiwerkplaats Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p>This research focused on improving user interaction with chatbots...</p>
+            </div>
         </div>
 
         <div class="project-card">
-            <h2>Vending Machine AI</h2>
-            <p>AI-driven dynamic pricing system for smart vending machines to optimize pricing strategies.</p>
+            <div class="project-info">
+                <h2>AI Traffic Accident Prevention in Breda</h2>
+                <p>Improve road safety using advanced data analytics and machine learning</p>
+                <p>Client: Royal Dutch Touring Club (ANWB)</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/anwb_logo.png" alt="ANWB Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p>In this project, AI and machine learning were used to analyze traffic data...</p>
+            </div>
         </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h2>Outdoor Fire Alarm System</h2>
+                <p>AI-driven fire detection in outdoor environments using Computer Vision</p>
+                <p>Client: BUas Innovation Square</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/buas_logo.png" alt="BUas Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p>This system leverages computer vision to detect fire hazards in outdoor environments...</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h2>Predictive Player Position Modeling</h2>
+                <p>Enhancing tactical decision-making with predictive analytics</p>
+                <p>Client: NAC Breda</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/nac_breda_logo.png" alt="NAC Breda Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p>This project used machine learning algorithms to predict player positions in football matches...</p>
+            </div>
+        </div>
+
     </section>
 
     <footer>
         <p>&copy; 2025 Márk Molnár. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleDetails(element) {
+            var details = element.nextElementSibling;
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>

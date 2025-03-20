@@ -17,7 +17,7 @@
             animation: fadeIn 1s forwards;
         }
         header {
-            background: #181818;
+            background: #2a2a2a;
             color: white;
             padding: 20px 40px;
             display: flex;
@@ -59,7 +59,6 @@
             font-size: 40px;
             font-weight: bold;
             color: #f5f5f5;
-            text-transform: uppercase;
         }
         .about-header p {
             font-size: 18px;
@@ -68,7 +67,7 @@
             margin-top: 15px;
         }
         .about-photo {
-            flex: 0 0 30%;
+            flex: 0 0 25%;
             margin-right: 30px;
             position: relative;
             overflow: hidden;
@@ -87,8 +86,8 @@
         }
         .carousel-container {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 32%;
+            height: 55%;
             overflow: hidden;
             border-radius: 12px;
         }
@@ -166,6 +165,13 @@
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+
+        /* My Story Section Adjustments */
+        .about-header.my-story {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -189,10 +195,23 @@
         </div>
         <div class="about-header">
             <h1>About Me</h1>
-            <p>I was born and raised in Hungary. I spent my childhood in a small village where I attended elementary school. Later, I pursued my high school education at Varga Katalin High School in Szolnok, specializing in IT and Mathematics. It was during this time that I was introduced to programming, robotics, and linear algebra.</p>
+            <p>My name is Márk Molnár, and I am currently in my third year of studying Applied Data Science & Artificial Intelligence at Breda University of Applied Sciences in the Netherlands.</p>
+            <p>I have a deep passion for solving complex data challenges using machine learning and AI. Analyzing patterns, building predictive models, and uncovering insights that drive meaningful decisions is something I truly enjoy. Through various projects, I have gained valuable hands-on experience that has further strengthened my enthusiasm for data science.</p>
+            <p>Programming excites me because it offers a world of clarity and logic, where every challenge has a solution. Seeing my efforts translate into real results is incredibly rewarding. I firmly believe that AI and IT are shaping the future, and I am eager to contribute to solving the evolving challenges in this dynamic field.</p>
+            <p>Beyond academics, I believe in maintaining a well-balanced lifestyle. Playing football and going to the gym helps me stay active and sharp, both mentally and physically.</p>
+            <p>As a lifelong learner, I am always looking for opportunities to expand my knowledge and skills—whether through personal projects, internships, or collaborations. I am known for my persistence and strong belief in self-improvement, driven by the idea that hard work and dedication make anything possible.</p>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="about-container">
+        <div class="about-header my-story">
+            <h1>My Story</h1>
+            <p>I was born and raised in Hungary, spending my early years in a small village where I attended elementary school. Later, I pursued my high school education at Varga Katalin High School in Szolnok, specializing in IT and Mathematics. It was during this time that I was introduced to programming, robotics, and linear algebra, which sparked my interest in technology and data science.</p>
             <p>In 2023, I moved to the Netherlands to pursue my studies at Breda University of Applied Sciences. This was a significant step in my personal and professional growth, and living abroad has enriched my experiences, both academically and socially.</p>
-            <p>Currently, I’m working towards a BSc in Applied Data Science & Artificial Intelligence at Breda University of Applied Sciences. Programming excites me because it’s a world where everything is clear and logical. When solving complex problems, I find satisfaction in seeing the results of my efforts. For me, IT and AI are the future, and I’m eager to be part of solving the mysteries and challenges of this ever-evolving field.</p>
-            <p>Known for my persistence and belief in self-improvement, I am driven by the idea that anything is possible through hard work and dedication.</p>
+            <p>Outside of tech, I am a huge football enthusiast (once dreamed of going pro, but lets just say my skills didnt keep up). I also love traveling, exploring new cultures, cities, and cuisines, and I have a deep interest in architecture and tourism.</p>
+            <p>My journey has been filled with challenges and opportunities, and I am grateful for the support of my family, friends, and mentors who have helped me along the way. I am excited about the future and look forward to the adventures that lie ahead.</p>
         </div>
     </section>
 
