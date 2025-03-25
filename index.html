@@ -112,28 +112,73 @@
         .project-section {
             padding: 60px 40px;
             text-align: center;
-            opacity: 0;
-            animation: fadeInUp 1s 1s forwards;
+            animation: fadeInUp 1s 1.5s forwards;
         }
 
         .project-card {
-            background: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            display: inline-block;
-            max-width: 600px;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(255, 193, 7, 0.2);
+            margin: 20px auto;
+            max-width: 800px;
+            animation: fadeInUp 1s 1.5s forwards;
+        }       
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+        }
+
+        .project-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project-text {
+            text-align: left;
+            max-width: 70%;
         }
 
         .project-card h2 {
             font-size: 24px;
-            color: #c9a227;
+            color: #f5a623;
+            margin-bottom: 10px;
         }
 
         .project-card p {
             font-size: 18px;
             color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .project-card .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #c9a227;
+            color: #1e1e1e;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            animation: fadeInUp 1s 1.5s forwards;
+        }
+
+        .project-card .read-more-btn:hover {
+            background-color: #a88c1d;
+        }
+
+        .client-logo img {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .client-logo img:hover {
+            transform: scale(1.1);
         }
 
         /* Contact Section */
@@ -237,11 +282,17 @@
     <section class="project-section">
         <h2>Featured Project</h2>
         <div class="project-card">
-            <h2>AI-Driven Plant Analysis</h2>
-            <p>Identifying and segmenting root structures using Computer Vision</p>
-            <p>Client: The Netherlands Eco-phenotyping Centre (NPEC)</p>
+            <div class="project-content">
+                <div class="project-text">
+                    <h2>AI-Driven Plant Analysis</h2>
+                    <p>Identifying and segmenting root structures using Computer Vision</p>
+                    <p><strong>Client:</strong> The Netherlands Eco-phenotyping Centre (NPEC)</p>
+                </div>
+                <div class="client-logo">
+                    <img src="assets/img/npec_logo.png" alt="NPEC Logo">
+                </div>
+            </div>
         </div>
-        <br><br>
         <a href="projects.html" class="read-more-btn">See More Projects</a>
     </section>
 
