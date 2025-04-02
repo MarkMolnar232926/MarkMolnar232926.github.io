@@ -3,167 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects - Márk Molnár</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        header {
-            background: #2a2a2a;
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #c9a227;
-        }
-        .portfolio-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #c9a227;
-            margin: 0;
-        }
-        .projects-content {
-            padding: 80px 20px;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .projects-content h1 {
-            font-size: 36px;
-            font-weight: bold;
-            color: #f5f5f5;
-            margin-bottom: 40px;
-        }
-        .project-card {
-            background: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(255, 193, 7, 0.3);
-        }
-        .project-info {
-            flex: 1; /* Ensures text takes up remaining space */
-        }
-        .project-card h2 {
-            font-size: 24px;
-            color: #c9a227;
-            margin: 0;
-        }
-        .project-card p {
-            font-size: 18px;
-            color: #cccccc;
-            margin: 5px 0;
-        }
-        .project-card a {
-            color: #f5a623;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-            transition: color 0.3s ease;
-        }
-        .project-card a:hover {
-            color: #c9a227;
-        }
-
-        /* Client logo */
-        .client-logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px; /* Adjust width as needed */
-            margin-left: 20px;
-        }
-        .client-logo{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 20px;
-        }
-        .client-logo img {
-            width: 60px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        .client-logo img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Hidden Content for Accordion */
-        .project-details {
-            display: none;
-            margin-top: 20px;
-            background-color: #333333;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        footer {
-            background: #181818;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    </style>
+    <title>Márk Molnár's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_projects.css">
 </head>
 <body>
     <header>
-        <div class="portfolio-title">Márk Molnár</div>
-        <nav>
+        <nav class="nav-left">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
+        </nav>
+        
+        <div class="logo">MM</div>
+    
+        <nav class="nav-right">
             <a href="projects.html">My Projects</a>
             <a href="contact.html">Contact Me</a>
         </nav>
     </header>
 
-    <section class="projects-content">
-        <h1>My Projects</h1>
-
+    <section class="project-content">
+        <div class="project-hero">
+            <h1>My Projects</h1>
+        </div>
         <div class="project-card">
             <div class="project-info">
                 <h2>AI-Driven Plant Analysis</h2>
                 <p>Identifying and segmenting root structures using Computer Vision</p>
-                <p>Client: The Netherlands Eco-phenotyping Centre (NPEC)</p>
+                <p>Client: <strong>Netherlands Eco-phenotyping Centre (NPEC)</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
@@ -172,30 +40,41 @@
                 </div>
             </div>
             <div class="project-details">
-                <p>The Netherlands Plant Eco-phenotyping Centre (NPEC) is dedicated to advancing plant research for sustainable agriculture. One of the key challenges in this field is automating root segmentation from images to achieve accurate root detection and analysis. Additionally, robotics plays a crucial role in precise plant inoculation. This project addresses these challenges by developing a robust plant segmentation approach, accurate root tip detection, and precise inoculation using a prototype of the OT-2 robot.</p>
-                <p>To tackle the challenges of plant phenotyping, computer vision methods were used to separate Petri dishes from background interference and perform semantic segmentation on plant elements like seeds, shoots, and roots. After refining and preprocessing the dataset, I created a machine learning model that could accurately predict masks for various plant structures. This enabled instance segmentation, which identified individual plants within the images, allowing for precise measurements such as root length and the exact location of root tips—a crucial factor in evaluating plant growth and characteristics.</p>
-                <p>In parallel with the computer vision work, the robotics aspect of the project focused on automating the delivery of inoculants to the identified plant root tips. I simulated and developed a precision liquid handling robot that was programmed using a PID controller for accurate liquid dispensing. The robot was integrated with the computer vision pipeline, enabling it to locate and deliveer the liquid to targeted areas on the Petri dish. This demonstarted how vision-based analysis could be seamlessly combined with robotic automation, allowing for precise interventions in plant phenotyping experiments.</p>
-                <p>Beside the PID controller, I also developed a Reinforcement Learning model. By designing appropriate reward functions and conducting hyperparameter tuning, I ensured that the robot could autonomously navigate to the correct root tips for liquid delivery. By comparing the PID controller and the Reinforcement Learning-based control system, I conducted a comparative analysis between these 2 systems. The PID controller demonstarted superior accuracy when combined with the Computer Vision pipeline, achieving precision below 1mm. However, with Reinforcement Learning, the robot performed the task way faster, but with a little bit worse accuracy.</p>
-                <p>Project Highlights:</p>
+                <p><strong>Project Highlights:</strong></p>
                 <ul>
-                    <li>Implemented a U-Net model achieving an F1 score of 0.85 for root mask prediction.</li>
-                    <li>Applied Dijkstra's shortest path method to accurately measure primary root length.</li>
-                    <li>Developed and compared a Reinforcement Learning model and a PID controller for precise inoculation using a simulated OT-2 robot. While RL was faster, the PID controller achieved higher accuracy in targeting root tips.</li>
+                    <li>Developed a <strong>U-Net model</strong> with an F1 score of 0.85 for root mask prediction.</li>
+                    <li>Utilized <strong>Dijkstra's algorithm</strong> for precise measurement of primary root length.</li>
+                    <li>Compared the performance of <strong>Reinforcement Learning</strong> and <strong>PID controllers</strong> for precise inoculation using the OT-2 robot prototype.</li>
                 </ul>
-                <p>Key Takeaways:</p>
+                
+                <p><strong>Key Takeaways:</strong></p>
                 <ul>
-                    <li>Strengthened expertise in Computer Vision for agriculture applications.</li>
-                    <li>Gained fundamental knowledge of robotics, automation, and precision control.</li>
-                    <li>Designed and developed an end-to-end AI-driven solution, from concept to working prototype.</li>
+                    <li>Deepened expertise in <strong>computer vision</strong> for agricultural applications.</li>
+                    <li>Gained hands-on experience in <strong>robotics</strong>, automation, and precision control systems.</li>
+                    <li>Designed and developed an end-to-end <strong>AI-driven solution</strong>, from concept to prototype.</li>
                 </ul>
+
+                <div class="separator"></div>
+
+                <p><strong>The Netherlands Plant Eco-phenotyping Centre (NPEC)</strong> is at the forefront of advancing plant research for sustainable agriculture. A key challenge in this field is automating root segmentation from images to enable accurate root detection and analysis. Additionally, robotics plays a critical role in ensuring precise plant inoculation. This project addresses these challenges by developing a robust plant segmentation approach, accurate root tip detection, and precise inoculation using the OT-2 robot prototype.</p>
+                
+                <p>To tackle the complexities of plant phenotyping, we leveraged <strong>computer vision techniques</strong> to separate Petri dishes from background interference and perform semantic segmentation on plant elements such as seeds, shoots, and roots. After dataset refinement and preprocessing, I built a machine learning model capable of predicting plant structure masks with high accuracy. This allowed for <strong>instance segmentation</strong>, enabling precise measurements like root length and root tip location, both critical for assessing plant growth and characteristics.</p>
+                
+                <p>On the robotics side, the project focused on automating the delivery of inoculants to the identified root tips. I developed a precision liquid handling robot controlled by a <strong>PID controller</strong>, ensuring accurate liquid dispensing. This robot was integrated with the computer vision pipeline, allowing it to precisely target and deliver liquid to designated areas on the Petri dish. This showcased the potential of combining vision-based analysis with robotic automation for precision-driven interventions in plant phenotyping experiments.</p>
+                
+                <p>In addition to the PID controller, I also implemented a <strong>Reinforcement Learning (RL) model</strong>. By designing tailored reward functions and performing hyperparameter optimization, the RL-based system autonomously navigated to the correct root tips for liquid delivery. A comparative analysis between the PID controller and RL revealed that the PID system achieved superior accuracy (<1mm precision), while the RL model excelled in speed, albeit with slightly reduced accuracy.</p>
+                
+                <img src="assets/img/npec_proccess.png" alt="NPEC Project Image">
+                
             </div>
+            
         </div>
 
         <div class="project-card">
             <div class="project-info">
-                <h2>Chatbot Experience Optimization</h2>
-                <p>Research on chatbot personalization, accuracy, and perceived waiting times in SMEs</p>
-                <p>Client: Digiwerkplaats</p>
+                <h2>Chatbot Experience Optimization in SMEs</h2>
+                <p>Research on chatbot personalization, accuracy, and perceived waiting times</p>
+                <p>Client: <strong>Digiwerkplaats</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
@@ -212,7 +91,7 @@
             <div class="project-info">
                 <h2>AI Traffic Accident Prevention in Breda</h2>
                 <p>Improve road safety using advanced data analytics and machine learning</p>
-                <p>Client: Royal Dutch Touring Club (ANWB)</p>
+                <p>Client: <strong>Royal Dutch Touring Club (ANWB)</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
@@ -229,7 +108,7 @@
             <div class="project-info">
                 <h2>Outdoor Fire Alarm System</h2>
                 <p>AI-driven fire detection in outdoor environments using Computer Vision</p>
-                <p>Client: BUas Innovation Square</p>
+                <p>Client: <strong>BUas Innovation Square</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
@@ -246,7 +125,7 @@
             <div class="project-info">
                 <h2>Predictive Player Position Modeling</h2>
                 <p>Enhancing tactical decision-making with predictive analytics</p>
-                <p>Client: NAC Breda</p>
+                <p>Client: <strong>NAC Breda</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
@@ -267,13 +146,18 @@
 
     <script>
         function toggleDetails(element) {
-            var details = element.nextElementSibling;
-            if (details.style.display === "block") {
-                details.style.display = "none";
+            var projectCard = element.closest('.project-card');
+            var details = projectCard.querySelector('.project-details');
+
+            if (details.style.maxHeight) {
+                details.style.maxHeight = null; // Collapse smoothly
+                element.innerText = "Learn More"; // Change button text
             } else {
-                details.style.display = "block";
+                details.style.maxHeight = details.scrollHeight + "px"; // Expand smoothly
+                element.innerText = "Show Less"; // Change button text
             }
         }
+
     </script>
 </body>
 </html>
