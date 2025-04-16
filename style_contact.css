@@ -91,6 +91,10 @@ ul li i {
     margin-right: 10px;
 }
 
+ul li:nth-child(1) { animation-delay: 0.3s; }
+ul li:nth-child(2) { animation-delay: 0.5s; }
+ul li:nth-child(3) { animation-delay: 0.7s; }
+
 form {
     margin-top: 30px;
     background: #2a2a2a;
@@ -98,6 +102,11 @@ form {
     border-radius: 10px;
     opacity: 0;
     animation: slideInUp 1s ease-out 0.5s forwards;
+}
+
+form:hover {
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 label {
@@ -118,6 +127,13 @@ input, textarea {
     font-size: 16px;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+    background-color: #3b3b3b;
+    box-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
 button {
     margin-top: 15px;
     padding: 10px 20px;
@@ -132,6 +148,11 @@ button {
 
 button:hover {
     background: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #ffd95e;
 }
 
 footer {

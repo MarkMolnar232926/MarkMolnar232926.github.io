@@ -50,12 +50,14 @@ nav a:hover {
     text-align: left;
     max-width: 900px;
     margin: 0 auto;
+    animation: scaleIn 1s ease-in-out;
 }
 
 .project-hero {
     font-size: 22px;
     color: #cccccc;
     margin: 0;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .project-card {
@@ -70,6 +72,7 @@ nav a:hover {
     flex-wrap: wrap;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    animation: slideUp 0.9s ease-in-out;
 }
 .project-card:hover {
     transform: translateY(-10px);
@@ -204,4 +207,26 @@ footer {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

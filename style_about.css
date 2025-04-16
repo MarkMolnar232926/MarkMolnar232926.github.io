@@ -53,6 +53,7 @@ nav a:hover {
     flex-direction: column;
     background: url('assets/img/filler_image.JPG') center/cover no-repeat;
     position: relative;
+    animation: heroZoomFade 1.5s ease-in-out;
 }
 
 .hero::after {
@@ -71,6 +72,7 @@ nav a:hover {
     color: #f5a623;
     z-index: 2;
     position: relative;
+    animation: slideInLeft 1s ease;
 }
 
 .hero p {
@@ -80,6 +82,7 @@ nav a:hover {
     line-height: 1.8;
     z-index: 2;
     position: relative;
+    animation: slideInRight 1s ease;
 }
 
 .container {
@@ -96,10 +99,16 @@ nav a:hover {
     text-align: left;
 }
 
-.about-text, .about-images {
+.about-text {
     flex: 1;
     min-width: 300px;
-    animation: slideIn 1.2s ease-in-out;
+    animation: slideInLeft 1.2s ease-in-out;
+}
+
+.about-images {
+    flex: 1;
+    min-width: 300px;
+    animation: slideInRight 1.2s ease-in-out;
 }
 
 .about-images img {
@@ -136,6 +145,9 @@ nav a:hover {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    animation: fadeUp 1.2s ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
 }
 
 .skills li, .languages li {
@@ -176,17 +188,28 @@ footer {
     text-align: center;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-60px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes fadeInZoom {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(60px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateY(20px); }
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroZoomFade {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
