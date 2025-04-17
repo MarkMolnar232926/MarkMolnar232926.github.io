@@ -74,23 +74,28 @@ nav a:hover {
     position: relative;
     animation: slideUp 0.9s ease-in-out;
 }
+
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(255, 193, 7, 0.3);
 }
+
 .project-info {
     flex: 1;
 }
+
 .project-card h2 {
     font-size: 24px;
     color: #c9a227;
     margin: 0;
 }
+
 .project-card p {
     font-size: 18px;
     color: #cccccc;
     margin: 5px 0;
 }
+
 .project-card a {
     color: #f5a623;
     text-decoration: none;
@@ -99,6 +104,7 @@ nav a:hover {
     margin-top: 10px;
     transition: color 0.3s ease;
 }
+
 .project-card a:hover {
     color: #c9a227;
 }
@@ -111,17 +117,20 @@ nav a:hover {
     width: 100px;
     margin-left: 20px;
 }
+
 .client-logo{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 20px;
 }
+
 .client-logo img {
     width: 80px;
     height: auto;
     transition: transform 0.3s ease;
 }
+
 .client-logo img:hover {
     transform: scale(1.1);
 }
