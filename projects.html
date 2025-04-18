@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Márk Molnár's Portfolio</title>
+    <title>My Projects - Márk Molnár</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style_projects.css">
@@ -264,11 +264,11 @@
             var details = projectCard.querySelector('.project-details');
 
             if (details.style.maxHeight) {
-                details.style.maxHeight = null; // Collapse smoothly
-                element.innerText = "Learn More"; // Change button text
+                details.style.maxHeight = null;
+                element.innerText = "Learn More";
             } else {
-                details.style.maxHeight = details.scrollHeight + "px"; // Expand smoothly
-                element.innerText = "Show Less"; // Change button text
+                details.style.maxHeight = details.scrollHeight + "px";
+                element.innerText = "Show Less";
             }
         }
 
