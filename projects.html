@@ -27,11 +27,59 @@
         <div class="project-hero">
             <h1>My Projects</h1>
         </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h2>Emotion Classification from a German Reality Show</h2>
+                <p>Analyzing spoken video dialogue with NLP and Transformers</p>
+                <p>Client: <strong>Content Intelligence Agency</strong></p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/cia_logo.jpg" alt="CIA Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p><strong>Project Highlights:</strong></p>
+                <ul>
+                    <li>Developed a complete NLP pipeline for emotion classification in unscripted German video content.</li>
+                    <li>ntegrated transcription, machine translation, text embedding, and emotion prediction into a unified system.</li>
+                    <li>Trained and compared classical models (Naive Bayes, Logistic Regression) and deep learning models (BiLSTM, RNN).</li>
+                    <li>Fine-tuned transformer-based models (BERT, RoBERTa) with multilingual data and class rebalancing.</li>
+                </ul>
+                
+                <p><strong>Key Takeaways:</strong></p>
+                <ul>
+                    <li>Gained hands-on experience developing full-stack NLP pipelines for emotion recognition.</li>
+                    <li>Applied advanced transformer models in a multilingual, multimodal context.</li>
+                    <li>Demonstrated model interpretability using explainability tools like attention visualization and class attribution.</li>
+                </ul>
+
+                <div class="separator"></div>
+
+                <p>This project aimed to detect and classify emotions in spoken German dialogue from a popular reality show on YouTube. Commissioned by the Content Intelligence Agency, the goal was to develop a pipeline capable of analyzing spontaneous, emotionally nuanced speech and providing interpretable emotional labels at the sentence level.</p>
+                
+                <p>The pipeline began with audio transcription and automatic translation from German to English where necessary. Using curated and cleaned datasets (GermanTrain, MELD, GoEmotions), emotional categories were standardized according to Ekman’s six core emotions (happiness, sadness, anger, fear, surprise, and disgust). Classical models such as Naive Bayes and Logistic Regression were initially tested using TF-IDF, POS tags, named entities, and sentiment scores.</p>
+                
+                <p>For more robust performance, deep learning architectures like LSTM and RNN were implemented with regularization, class weighting, and early stopping to prevent overfitting. The highest accuracy was achieved using fine-tuned transformer models (BERT and RoBERTa), trained on multilingual corpora and augmented for data balance and generalization.</p>
+                
+                <p>Finally, the model’s decision-making process was evaluated using explainable AI methods, such as attention visualization and post-hoc interpretability techniques, ensuring transparency and client trust. The completed prototype was demonstrated to stakeholders, highlighting its ability to identify emotional tones in real-world media content, with potential applications in audience analysis, media monitoring, and conversational AI systems.</p>
+                
+                <div class="pdf-wrapper">
+                    <div class="pdf-label">📄 Click or hover to read</div>
+                    <iframe class="pdf-viewer" src="assets/docs/Block_C_Final_Presentation.pdf"></iframe>
+                </div>
+                
+            </div>
+            
+        </div>
+
         <div class="project-card">
             <div class="project-info">
                 <h2>AI-Driven Plant Analysis</h2>
                 <p>Identifying and segmenting root structures using Computer Vision</p>
-                <p>Client: <strong>Netherlands Eco-phenotyping Centre (NPEC)</strong></p>
+                <p>Client: <strong>Netherlands Plant Eco-phenotyping Centre (NPEC)</strong></p>
                 <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
             </div>
             <div class="client-logo-container">
