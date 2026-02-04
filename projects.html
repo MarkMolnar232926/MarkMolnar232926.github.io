@@ -30,6 +30,66 @@
 
         <div class="project-card">
             <div class="project-info">
+                <h2>3D Bin Packing Optimization for Logistics</h2>
+                <p>Designing intelligent truck loading algorithms with constraint handling, visualization, and production deployment</p>
+                <p>Client: <strong>DKG Group (De KeukenGroup)</strong></p>
+                <a href="javascript:void(0);" onclick="toggleDetails(this)">Learn More</a>
+            </div>
+            <div class="client-logo-container">
+                <div class="client-logo">
+                    <img src="assets/img/dkg_logo.png" alt="DKG Logo">
+                </div>
+            </div>
+            <div class="project-details">
+                <p><strong>Project Highlights:</strong></p>
+                <ul>
+                    <li>Developed a complete data cleaning pipeline handling dimension consolidation, unit error correction, and missing value imputation using Random Forest Regressor.</li>
+                    <li>Built and compared multiple 3D bin packing algorithms with real-world constraint validation.</li>
+                    <li>Created interactive 3D visualization tools for loading sequences using Plotly, enabling non-technical users to verify and understand results.</li>
+                    <li>Deployed the solution as a containerized Streamlit application for local execution at DKG facilities.</li>
+                    <li>Implemented comprehensive liability controls, safety checkpoints, and ARBO compliance validation for items over 23kg.</li>
+                </ul>
+                
+                <p><strong>Key Takeaways:</strong></p>
+                <ul>
+                    <li>Hands-on experience translating complex logistics constraints (LIFO, fragility, weight distribution, rotation limits) into algorithmic rules.</li>
+                    <li>Learned that classical heuristics often outperform ML approaches for highly constrained optimization problems.</li>
+                    <li>Discovered systematic data quality issues through density analysis, distinguishing legitimate outliers from unit conversion errors.</li>
+                    <li>Applied modular architecture principles separating data processing, optimization, and visualization for maintainability.</li>
+                    <li>Delivered professional documentation and printable outputs (loading checklists, cabinet stickers) for warehouse staff.</li>
+                </ul>
+
+                <div class="separator"></div>
+
+                <p>
+                    Kitchen cabinets present unique logistics challenges: they're bulky, fragile, and must be loaded in precise sequences to enable efficient unloading at multiple delivery stops.
+                    DKG Group, one of the largest kitchen manufacturers in the Benelux, was experiencing suboptimal truck utilization (around 60%) due to manual loading decisions, resulting in increased transportation costs and safety risks.
+                </p>
+
+                <p>
+                    This project focused on designing intelligent 3D bin packing algorithms that respect real-world constraints including LIFO (Last In First Out) requirements for multi-stop deliveries, fragility rules preventing stacking on delicate items, weight distribution for vehicle safety, and label visibility after rotation.
+                    The solution processes DKG's dataset of over 1 million items across thousands of transport orders.
+                </p>
+
+                <p>
+                    Working directly with DKG's warehouse staff provided invaluable operational insights—weight distribution tracking, sectional load securing, and damage prevention strategies—that significantly improved algorithm design beyond what pure academic approaches would achieve.
+                    The final deliverable includes automated PDF generation for loading checklists and cabinet stickers, enabling seamless integration into existing warehouse workflows.
+                </p>
+
+                <p>
+                    Awarded Top 3 in Most Innovative Project, Best Business Value Delivered, and Best Project Overall by BUas Data Science & AI mentors and supervisors.
+                </p>
+                
+                <video controls>
+                    <source src="assets/video/dkg_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                
+            </div>
+            
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
                 <h2>MLOps for Scalable Model Deployment</h2>
                 <p>Building production-ready ML pipelines with CI/CD, monitoring, and cloud deployment</p>
                 <p>Client: <strong>Netherlands Plant Eco-phenotyping Centre (NPEC)</strong></p>
