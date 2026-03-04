@@ -1,71 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Márk Molnár's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Márk Molnár — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-        </nav>
-        
-        <div class="logo">MM</div>
-    
-        <nav class="nav-right">
-            <a href="projects.html">My Projects</a>
-            <a href="contact.html">Contact Me</a>
-        </nav>
 
-    </header>
+  <header>
+    <nav class="nav-left">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="logo">MM</div>
+    <nav class="nav-right">
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-    <section class="hero">
-        <div class="text-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>A personal page where I share my journey, skills, and projects.</p>
-            <p>"Passionate about programming, AI, and data-driven solutions—I love solving problems and finding innovative ways to make an impact. Always open to new opportunities, I keep an open mind to meet people, exchange ideas, and grow." <br><span style="font-weight: bold;">Márk</span></p>
-            <a href="about.html" class="read-more-btn">Read More About Me</a>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-index">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Welcome to my portfolio</p>
+        <h1>I'm <span>Márk Molnár</span>.</h1>
+        <p class="sub">Passionate about programming, AI, and data-driven solutions.<br> I love solving problems and finding innovative ways to make an impact.</p>
+        <div class="hero-btns">
+          <a href="about.html" class="btn">More About Me</a>
+          <a href="contact.html" class="btn btn-outline">Get In Touch</a>
         </div>
-        <img src="assets/img/preview_image.jpeg" alt="Preview Image" class="profile-img">
-    </section>
-
-    <div class="separator"></div>
-
-    <section class="project-section">
-        <h2>Featured Project</h2>
-        <div class="project-card">
-            <div class="project-content">
-                <div class="project-text">
-                    <h2>AI-Driven Plant Analysis</h2>
-                    <p>Identifying and segmenting root structures using Computer Vision</p>
-                    <p>Client: <strong>Netherlands Plant Eco-phenotyping Centre (NPEC)</strong></p>
-                </div>
-                <div class="client-logo">
-                    <img src="assets/img/npec_logo.png" alt="NPEC Logo">
-                </div>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-num">
+              <span class="counter" data-target="3.98" data-decimals="2">0.00</span>
             </div>
+            <div class="stat-label">GPA / 4.0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">
+              <span class="counter" data-target="9" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">
+              <span class="counter" data-target="7" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Clients</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">
+              <span class="counter" data-target="4">0</span>
+            </div>
+            <div class="stat-label">Languages</div>
+          </div>
         </div>
-        <a href="projects.html" class="read-more-btn">See More Projects</a>
-    </section>
+      </div>
 
-    <section class="contact-section">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch or collaborate, feel free to reach out through the following channels:</p>
-        <ul>
-            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:molnmark04@gmail.com">molnmark04@gmail.com</a></li>
-            <li><i class="fas fa-phone"></i> Phone: <a href="tel:+31621845236">+31 6 2184 5236</a></li>
-            <li><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/36707766307">+36 70 776 6307</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/molnmark04" target="_blank">LinkedIn</a></li>
-        </ul>
-    </section>
+      <div class="hero-photo-wrap bracket-box">
+        <img src="assets/img/preview_image.jpeg" alt="Márk Molnár">
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Márk Molnár. All rights reserved.</p>
-    </footer>
+  <!-- CURRENT INTERNSHIP -->
+  <section class="section">
+    <p class="section-tag">Currently</p>
+    <h2 class="section-title">Active Internship</h2>
+    <div class="exp-card internship-card">
+      <div class="exp-card-header">
+        <div class="exp-logo">
+          <img src="assets/img/rbfa_logo.png" alt="RBFA Logo">
+        </div>
+        <div class="exp-meta">
+          <h2>Data Scientist Intern</h2>
+          <p class="exp-org">Royal Belgian Football Association (RBFA)</p>
+          <div class="exp-tags">
+            <span class="exp-tag exp-tag-active">● Active</span>
+            <span class="exp-tag">Feb 2026 – Jun 2026</span>
+            <span class="exp-tag">Tubize, Belgium (Hybrid)</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-body">
+        <p>Building an end-to-end Computer Vision pipeline to generate internal player tracking data from broadcast recordings, supporting the national team's preparation for the <strong style="color:var(--cyan);">2026 FIFA World Cup.</strong></p>
+        <a href="experience.html" class="btn" style="margin-top:20px;">Full Experience</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="section" style="padding-top:0;">
+    <p class="section-tag">Featured Work</p>
+    <h2 class="section-title">Latest Project</h2>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-logo">
+          <img src="assets/img/dkg_logo.png" alt="DKG Logo">
+        </div>
+        <div class="exp-meta">
+          <h2>Truck Loading Optimization System</h2>
+          <p class="exp-org">De KeukenGroep (DKG)</p>
+          <div class="timeline-highlights">
+            <span>Data Engineering</span><span>Heuristics Algorithms</span><span>Plotly</span><span>Microsoft Azure</span><span>Docker</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-body">
+        <p>Designing intelligent truck loading algorithms with constraint handling, visualization, and production deployment.</p>
+        <a href="experience.html" class="btn" style="margin-top:20px;">More Info & Other Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section class="section" style="padding-top:0;">
+    <div class="contact-strip">
+      <h2>Get in touch with me!</h2>
+      <p>Always open to new opportunities, I keep an open mind to meet people, exchange ideas, and grow.</p>
+      <div class="contact-links">
+        <a href="mailto:molnmark04@gmail.com"><i class="fas fa-envelope"></i>molnmark04@gmail.com</a>
+        <a href="tel:+31621845236"><i class="fas fa-phone"></i>+31 6 2184 5236</a>
+        <a href="https://wa.me/36707766307" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+        <a href="https://linkedin.com/in/molnmark04" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Márk Molnár · All rights reserved</p>
+  </footer>
+
+  <script>
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+
+    // Animated counters — triggered once when stats row enters viewport
+    const counters = document.querySelectorAll('.counter');
+    const duration = 1800;
+
+    const animate = (el) => {
+      const target   = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimals || 0);
+      const suffix   = el.dataset.suffix || '';
+      const start    = performance.now();
+
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+      const step = (now) => {
+        const elapsed  = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value    = target * easeOut(progress);
+        el.textContent = value.toFixed(decimals) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target.toFixed(decimals) + suffix;
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counters.forEach(animate);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.stats-row'));
+  </script>
 </body>
 </html>

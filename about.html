@@ -1,83 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Márk Molnár</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_about.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Márk Molnár</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-        </nav>
-        
-        <div class="logo">MM</div>
-    
-        <nav class="nav-right">
-            <a href="projects.html">My Projects</a>
-            <a href="contact.html">Contact Me</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <h1>Hi, I'm Márk Molnár</h1>
-        <p>Passionate about AI, Data Science, and solving real-world problems with machine learning.</p>
-    </section>
-    <div class="container">
-        <div class="about-section">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>My name is Márk Molnár, I am 21 years old, and I am currently pursuing a bachelor's degree in Applied Data Science & Artificial Intelligence at Breda University of Applied Sciences in the Netherlands. My current GPA is 3.98/4.0.</p>
-                <p>I have a deep passion for solving complex data challenges using machine learning and AI. I enjoy analyzing patterns, building predictive models, and uncovering insights that drive meaningful decisions. Through hands-on projects, I’ve strengthened my skills and enthusiasm for data science.</p>
-                <p>Programming excites me because it provides clarity and logic, where every challenge has a solution. Seeing my efforts translate into real results is incredibly rewarding. I believe AI is shaping the future, and I’m eager to contribute to solving emerging challenges in this dynamic field.</p>
-                <p>Beyond academics, I value a well-balanced lifestyle. Playing football, going for a run, or going to the gym keep me active and sharp, both mentally and physically.</p>
-                <p>As a lifelong learner, I continuously seek opportunities to expand my knowledge—whether through personal projects, internships, or collaborations. I am persistent and strongly believe that hard work and dedication make anything possible.</p>
-            </div>
-            <div class="about-images">
-                <img src="assets/img/portrait_image.jpeg" alt="Grow up Me">
-            </div>
-        </div>
-        <div class="separator"></div>
-        <div class="about-section">
-            <div class="about-images" style="animation: slideInLeft 1.2s ease-in-out;">
-                <img src="assets/img/child_image.jpeg" alt="Young Me">
-            </div>
-            <div class="about-text" style="animation: slideInRight 1.2s ease-in-out;">
-                <h2>My Story</h2>
-                <p>I was born and raised in Hungary, spending my early years in a small village where I attended elementary school. Later, I pursued my high school education at Varga Katalin High School in Szolnok, specializing in IT and Mathematics. It was during this time that I was introduced to programming, robotics, and linear algebra, which sparked my interest in technology and data science.</p>
-            <p>In 2023, I moved to the Netherlands to pursue my studies at Breda University of Applied Sciences. This was a significant step in my personal and professional growth, and living abroad has enriched my experiences, both academically and socially.</p>
-            <p>Outside of tech, I am a huge football enthusiast (once dreamed of going pro, but let's just say my skills didn't keep up). I also love traveling, exploring new cultures, cities, and cuisines, and I have a deep interest in architecture and tourism.</p>
-            <p>My journey has been filled with challenges and opportunities, and I am grateful for the support of my family, friends, and mentors who have helped me along the way. I am excited about the future and look forward to the adventures that lie ahead.</p>
-            </div>
-        </div>
-        <div class="separator"></div>
-        <div class="skills">
-            <h3>My Skills</h3>
-            <ul>
-                <li><strong>Programming Languages:</strong> Python, HTML, CSS, SQL</li>
-                <li><strong>Data Science Tools:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras, OpenCV, PyTorch</li>
-                <li><strong>Machine Learning:</strong> Supervised & Unsupervised Learning, Neural Networks, Reinforcement Learning, Deep Learning, Natural Language Processing, Computer Vision, Transformers</li>
-                <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Microsoft Power BI</li>
-                <li><strong>Other Skills:</strong> Statistical Data Analysis, Data Cleaning, Model Evaluation, Feature Engineering, A/B Testing, Time Series Analysis, Robotics, Agile Project Management, Exploratory Data Analysis, GitHub Actions, Microsoft Azure</li>
-            </ul>
-        </div>
-    
-        <div class="separator"></div>
-    
-        <div class="languages">
-            <h3>Languages</h3>
-            <ul>
-                <li><strong>English</strong> (Fluent)</li>
-                <li><strong>Hungarian</strong> (Native)</li>
-                <li><strong>German</strong> (Beginner)</li>
-            </ul>
-        </div>
+
+  <header>
+    <nav class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+    <div class="logo">MM</div>
+    <nav class="nav-right">
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-tag">Who I Am</p>
+    <h1>About Me</h1>
+    <p>Moved from Hungary to the Netherlands at 19, driven by the ambition to succeed and the belief that everything happens for a reason.</p>
+  </div>
+
+  <div class="section" style="padding-top:20px;">
+
+    <!-- BIO -->
+    <div class="about-grid">
+      <div>
+        <p class="section-tag">Background</p>
+        <p>I'm 21 years old, pursuing a bachelor's in Applied Data Science & Artificial Intelligence at Breda University of Applied Sciences in the Netherlands. Current GPA: <strong style="color:var(--cyan);">3.98 / 4.0</strong>.</p>
+        <p>I have a deep passion for solving complex data challenges with machine learning and AI — analyzing patterns, building predictive models, and uncovering insights that drive real decisions.</p>
+        <p>Programming excites me because it provides clarity and logic, where every challenge has a solution. Seeing my efforts translate into real results is incredibly rewarding. I believe AI is shaping the future, and I’m eager to contribute to solving emerging challenges in this dynamic field.</p>
+        <p>Beyond academics, I value a well-balanced lifestyle. Playing football, going for a run, or going to the gym keep me active and sharp, both mentally and physically.</p>
+        <blockquote class="pull-quote">
+          "I am persistent and strongly believe that hard work and dedication make anything possible."
+        </blockquote>
+      </div>
+      <div>
+        <img src="assets/img/portrait_image.jpeg" alt="Márk Molnár portrait">
+      </div>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Márk Molnár. All rights reserved.</p>
-    </footer>
+
+    <div class="sep"></div>
+
+    <!-- MY STORY -->
+    <div class="about-grid rev">
+      <div>
+        <img src="assets/img/child_image.jpeg" alt="Young Márk">
+      </div>
+      <div>
+        <p class="section-tag">My Story</p>
+        <p>I was born and raised in Hungary, spending my early years in a small village where I attended elementary school. Later, I pursued my high school education at Varga Katalin High School in Szolnok, specializing in IT and Mathematics. It was during this time that I was introduced to programming, robotics, and linear algebra.</p>
+        <p>In 2023, I moved to the Netherlands to pursue my studies at Breda University of Applied Sciences. This was a significant step in my personal and professional growth, and living abroad has enriched my experiences, both academically and socially.</p>
+        <p>Outside of tech I'm a football enthusiast (the pro career didn't pan out, but the passion remains). I love travelling, exploring new cultures and cuisines, and I have a deep interest in architecture and tourism.</p>
+        <blockquote class="pull-quote">
+          "I am excited about the future and look forward to the adventures that lie ahead."
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- EDUCATION -->
+    <p class="section-tag">Education</p>
+    <h2 class="section-title">Academic Background</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>BSc Applied Data Science & Artificial Intelligence</h3>
+              <p class="timeline-org">Breda University of Applied Sciences (BUas) · Breda, Netherlands</p>
+            </div>
+            <span class="timeline-date">2023 – Present</span>
+          </div>
+          <div class="timeline-highlights">
+            <span>Machine Learning</span><span>Deep Learning</span><span>Statistics</span><span>MLOps</span><span>& many more...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>High School Diploma — Information Technology & Applied Mathematics</h3>
+              <p class="timeline-org">Varga Katalin High School · Szolnok, Hungary</p>
+            </div>
+            <span class="timeline-date">2019 – 2023</span>
+          </div>
+          <div class="timeline-highlights">
+            <span>Programming</span><span>Robotics</span><span>Linear Algebra</span><span>Mathematics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- SKILLS -->
+    <div class="skills-box">
+      <h3>Technical Skills</h3>
+      <ul class="skills-list">
+        <li><strong>Programming Languages</strong><span>Python · HTML · CSS · SQL</span></li>
+        <li><strong>ML / DL</strong><span>Scikit-learn · TensorFlow · Keras · PyTorch · Transformers · Neural Networks</span></li>
+        <li><strong>Computer Vision</strong><span>OpenCV · U-Net · SAM2 · YOLO · RF-DETR</span></li>
+        <li><strong>MLOps & Cloud</strong><span>Docker · GitHub Actions · MLFlow · Azure · Bitbucket · Google Cloud</span></li>
+        <li><strong>Data & Vizualization</strong><span>Pandas · NumPy · Matplotlib · Seaborn · Plotly · Power BI</span></li>
+        <li><strong>Other</strong><span>Reinforcement Learning · NLP · Agile Project Management · Statistical Analysis · A/B Testing</span></li>
+      </ul>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="lang-box">
+      <h3>Languages</h3>
+      <ul class="lang-list">
+        <li><strong>English</strong> — Fluent</li>
+        <li><strong>Hungarian</strong> — Native</li>
+        <li><strong>German</strong> — Beginner</li>
+        <li><strong>Dutch</strong> — Beginner</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Márk Molnár · All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
